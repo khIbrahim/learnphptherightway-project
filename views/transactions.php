@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <title>Transactions</title>
         <style>
@@ -34,20 +34,36 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- YOUR CODE -->
+            <?php
+                $root = dirname(__DIR__) .  DIRECTORY_SEPARATOR;
+                require($root . "public" . DIRECTORY_SEPARATOR . "index.php");
+                addTransactions();
+            ?>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td>
+                        <?php
+                            echo "$" . getTotalIncome();
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td>
+                        <?php
+                            echo "$" . getTotalExpense();
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="3">Net Total:</th>
-                    <td><!-- YOUR CODE --></td>
+                    <td>
+                        <?php
+                            echo "$" . getNetTotal();
+                        ?>
+                    </td>
                 </tr>
             </tfoot>
         </table>
